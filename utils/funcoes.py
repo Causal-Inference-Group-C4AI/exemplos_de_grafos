@@ -33,12 +33,13 @@ def draw_graph(graph : nx.Graph, node_colors : list = None):
     """
     nx.draw_networkx(
         graph,
-        with_labels=True,        # Show labels on nodes
-        node_color=node_colors,  # Color of nodes
-        edge_color="gray",       # Color of edges
-        node_size=2000,          # Size of nodes
-        font_size=12,            # Font size for labels
-        arrowsize=20,            # Arrow size for edges
+        pos = nx.shell_layout(graph), # Position of nodes
+        with_labels=True,             # Show labels on nodes
+        node_color=node_colors,       # Color of nodes
+        edge_color="gray",            # Color of edges
+        node_size=2000,               # Size of nodes
+        font_size=12,                 # Font size for labels
+        arrowsize=20,                 # Arrow size for edges
     )
 
 def str_to_joaos(versao_str: str, custom_cardinalities: dict = None) -> str:
