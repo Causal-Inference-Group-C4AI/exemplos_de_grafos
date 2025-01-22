@@ -145,4 +145,20 @@ def generate_example(edges_str : str, custom_cardinalities: dict = None):
     node_colors = define_colors(graph)
     draw_graph(graph, node_colors)
     print(str_to_joaos(edges_str, custom_cardinalities))
-    
+
+def tuple_generate_example(edges, custom_cardinalities: dict = None):
+    """
+    Generates an example graph based on the edges string.
+
+    Args:
+        edges (str): The edges string.
+        custom_cardinalities (dict, optional): A dictionary with custom cardinalities for the nodes.
+    """
+    graph = nx.DiGraph()
+    graph.add_edges_from(edges)
+
+    if custom_cardinalities is None:
+        custom_cardinalities = {}
+
+    node_colors = define_colors(graph)
+    draw_graph(graph, node_colors)
